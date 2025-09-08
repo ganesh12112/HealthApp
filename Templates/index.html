@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Monitor</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background: #f0f8ff; }
+        h1 { margin-top: 20px; }
+        .container { margin: auto; width: 300px; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        label { display: block; margin-top: 15px; font-weight: bold; text-align: left; }
+        input { padding: 10px; margin-top: 5px; width: 95%; border: 1px solid #ccc; border-radius: 5px; }
+        button { margin-top: 20px; padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #45a049; }
+        .result { margin-top: 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Health Monitor</h1>
+    <div class="container">
+        <form method="POST">
+            <label for="heart_rate">Heart Rate (bpm):</label>
+            <input type="number" name="heart_rate" id="heart_rate" placeholder="Enter heart rate" required>
+
+            <label for="bp_systolic">BP Systolic (mmHg):</label>
+            <input type="number" name="bp_systolic" id="bp_systolic" placeholder="Enter systolic BP" required>
+
+            <label for="bp_diastolic">BP Diastolic (mmHg):</label>
+            <input type="number" name="bp_diastolic" id="bp_diastolic" placeholder="Enter diastolic BP" required>
+
+            <label for="breathing_rate">Breathing Rate (breaths/min):</label>
+            <input type="number" name="breathing_rate" id="breathing_rate" placeholder="Enter breathing rate" required>
+
+            <label for="oxygen_level">Oxygen Level (%):</label>
+            <input type="number" name="oxygen_level" id="oxygen_level" placeholder="Enter oxygen level" required>
+
+            <button type="submit">Check Health</button>
+        </form>
+
+        <div class="result">{{ result|safe }}</div>
+    </div>
+</body>
+</html>
+
